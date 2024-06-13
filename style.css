@@ -1,0 +1,29 @@
+:root {
+    --danger: #white;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.company-logo {
+    max-width: 100px;
+    margin-right: 0; /* Ajusta el margen según la posición deseada */
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    color: black;
+}
+
+.text {
+    color: white;
+}
+
+.text:hover {
+    cursor: pointer;
+    color: white;
+}
