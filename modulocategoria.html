@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Categorías</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="moduloprincipal.html">TIENDA JS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="moduloprincipal.html"><i class="fas fa-home"></i> Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="modulousuario.html"><i class="fas fa-users"></i> Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="modulocliente.html"><i class="fas fa-user-friends"></i> Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="modulocategoria.html"><i class="fas fa-list-ul"></i> Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="moduloproducto.html"><i class="fas fa-shopping-cart"></i> Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="modulopedidos.html"><i class="fas fa-truck"></i> Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="administrativo.html"><i class="fas fa-user-circle"></i> Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fas fa-sign-out-alt"></i> Salir</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+   
+    <div class="container">
+        <h2>Módulo de Categorías</h2>
+        
+        <!-- Barra de búsqueda -->
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar" aria-describedby="boton-buscar">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="boton-buscar">Buscar</button>
+                </div>
+            </div>
+            
+        <!-- Lista de categorías -->
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                    <th>Descripción</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Ropa</td>
+                    <td><img src="img/img2.png" alt="" style="max-height: 50px;"></td>
+                    <td>Ropa de todo precio y para todas las personas.</td>
+                    <td>2024-01-01</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editarCategoriaModal">Editar</button>
+                        
+                        <!-- Modal de Edición de Categoría -->
+
+        <div class="modal" id="editarCategoriaModal" tabindex="-1" role="dialog" aria-labelledby="editarCategoriaModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editarCategoriaModalLabel">Editar Categoría</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="codigo">Código</label>
+                                <input type="text" class="form-control" id="codigo" value="001" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" value="accesorio" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="imagen">Imagen</label>
+                                <input type="file" class="form-control-file" id="imagen">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripción</label>
+                                <textarea class="form-control" id="descripcion" rows="3" required>Ropa de moda para todas las edades</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha">Fecha</label>
+                                <input type="date" class="form-control" id="fecha" value="2022-01-01" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                        <button class="btn btn-danger btn-sm" >Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Accesorios</td>
+                    <td><img src="img/img1.webp" alt="airpods" style="max-height: 50px;"></td>
+                    <td>Encuentra los accesorios perfectos para tu celular.</td>
+                    <td>2024-06-15</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editarCategoriaModal">Editar</button>
+                        <button class="btn btn-danger btn-sm" >Eliminar</button>
+                    </td>
+                </tr>
+
+                <!-- Agrega más filas de categorías según sea necesario -->
+            </tbody>
+        </table>
+
+                <!-- Botón para abrir el modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categoriaModal">
+                    Agregar Categoría
+                </button>
+        
+                <!-- Modal de Registro/Actualización de Categoría -->
+                <div class="modal" id="categoriaModal" tabindex="-1" role="dialog" aria-labelledby="categoriaModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="categoriaModalLabel">Registro/Actualización de Categoría</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="codigo">Código</label>
+                                        <input type="text" class="form-control" id="codigo" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nombre">Nombre</label>
+                                        <input type="text" class="form-control" id="nombre" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="imagen">Imagen</label>
+                                        <input type="file" class="form-control-file" id="imagen">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="descripcion">Descripción</label>
+                                        <textarea class="form-control" id="descripcion" rows="3" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fecha">Fecha</label>
+                                        <input type="date" class="form-control" id="fecha" required>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </body>
+        </html>
+        
+        
+
+

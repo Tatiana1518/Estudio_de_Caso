@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperación de Contraseña</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center">Recuperación de Contraseña</h2>
+                    <form action="/recuperar-contrasena" method="post">
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-3">Enviar Correo de Recuperación</button>
+                    </form>
+                    <p class="text-center mt-3">¿Deseas <a href="index.html">Iniciar Sesion</a>?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

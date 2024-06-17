@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Usuarios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="moduloprincipal.html">TIENDA JS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="moduloprincipal.html"><i class="fas fa-home"></i> Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="modulousuario.html"><i class="fas fa-users"></i> Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="modulocliente.html"><i class="fas fa-user-friends"></i> Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="modulocategoria.html"><i class="fas fa-list-ul"></i> Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="moduloproducto.html"><i class="fas fa-shopping-cart"></i> Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="modulopedidos.html"><i class="fas fa-truck"></i> Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="administrativo.html"><i class="fas fa-user-circle"></i> Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fas fa-sign-out-alt"></i> Salir</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Módulo de Usuarios</h2>
+
+         <!-- Barra de búsqueda -->
+         <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar" aria-describedby="boton-buscar">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="boton-buscar">Buscar</button>
+            </div>
+        </div>
+
+        <!-- Lista de usuarios -->
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Numero de Documento</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Tipo de Rol</th>
+                    <th>Email</th>
+                    <th>Celular</th>
+                    <th>Contraseña</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1020103556</td>
+                    <td>Tatiana</td>
+                    <td>Ocampo</td>
+                    <td>Empleado</td>
+                    <td>tati@example.com</td>
+                    <td>3214567852</td>
+                    <td>Tatiana2021*</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editarUsuarioModal">Editar</button>
+                        <!-- Modal editar -->
+                        <div class="modal fade" id="editarUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="editarUsuarioModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editarUsuarioModalLabel">Editar Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="numeroDocumento">Número de Documento</label>
+                        <input type="number" class="form-control" id="numeroDocumentoEditar" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombres">Nombres</label>
+                        <input type="text" class="form-control" id="nombresEditar" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidosEditar" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoRol">Tipo de Rol</label>
+                        <select class="form-control" id="rol" required>
+                            <option value="">Seleccionar Rol</option>
+                            <option value="administrador">Administrador</option>
+                            <option value="usuario">Empleado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="emailEditar" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="celular">Celular</label>
+                        <input type="number" class="form-control" id="celularEditar" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" class="form-control" id="contrasenaEditar" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Modal editar fin -->
+                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- Agrega más filas de usuarios según sea necesario -->
+                <tbody>
+                    <tr>
+                        <td>12345678</td>
+                        <td>Jesus</td>
+                        <td>Molina</td>
+                        <td>Administrador</td>
+                        <td>john@example.com</td>
+                        <td>1234567890</td>
+                        <td>2345@dc</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editarUsuarioModal">Editar</button>
+                            <button class="btn btn-danger btn-sm">Eliminar</button>
+                        </td>
+                    </tr>
+                    <!-- Agrega más filas de usuarios según sea necesario -->
+            </tbody>
+        </table>
+       
+
+        <!-- Botón para registrar usuario -->
+        <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#registrarUsuarioModal">Registrar Usuario</button>
+        
+        <!-- Modal para registrar usuario -->
+        <div class="modal fade" id="registrarUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="registrarUsuarioModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="registrarUsuarioModalLabel">Registrar Usuario</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="numeroDocumento">Número de Documento</label>
+                                            <input type="number" class="form-control" id="numeroDocumento" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nombres">Nombres</label>
+                                            <input type="text" class="form-control" id="nombres" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="apellidos">Apellidos</label>
+                                            <input type="text" class="form-control" id="apellidos" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tipoRol">Tipo de Rol</label>
+                                            <select class="form-control" id="rol" required>
+                                                <option value="">Seleccionar Rol</option>
+                                                <option value="administrador">Administrador</option>
+                                                <option value="usuario">Empleado</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" id="email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="celular">Celular</label>
+                                            <input type="number" class="form-control" id="celular" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contrasena">Contraseña</label>
+                                            <div class="input-group">
+                                                <input type="password" class="form-control" id="contrasena" required>
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-secondary" type="button" id="mostrarContrasena">Mostrar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Registrar</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                
+                                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+                                <script src="script.js"></script>
+                                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                                </body>
+                                </html>
+                                
+                                
+                               
